@@ -1,4 +1,5 @@
 import React from "react";
+import * as types from "./../redux/types";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addContact } from "../redux/actions/addcontact";
@@ -18,6 +19,10 @@ const AddContact = () => {
   const handleChangePhone = (e) => {
     setPhone(e.target.value);
   };
+
+  React.useEffect(() => {
+    dispatch({ type: types.CLEAR_CONTACT_SUCCESS_MSG });
+  }, []);
 
   const handleAddContact = (e) => {
     e.preventDefault();
