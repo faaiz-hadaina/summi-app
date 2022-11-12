@@ -13,6 +13,7 @@ export const searchContact = (search) => async (dispatch, getState) => {
     const responseData = response.data;
 
     dispatch({ type: types.ACTION_SUCCESS });
+    dispatch({ type: types.SELECT_CONTACT_SUCCESS, payload: [] });
     dispatch({ type: types.SEARCH_CONTACTS_SUCCESS, payload: responseData });
   } catch (e) {
     console.log(e);

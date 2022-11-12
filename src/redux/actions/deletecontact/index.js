@@ -11,6 +11,7 @@ export const deleteContact = (id) => async (dispatch, getState) => {
     });
 
     dispatch(searchContact(""));
+
     dispatch({ type: types.ACTION_SUCCESS });
   } catch (e) {
     console.log(e);
