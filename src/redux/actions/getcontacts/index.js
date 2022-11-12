@@ -3,7 +3,7 @@ import { Client } from "./../../../services/client";
 
 export const searchContact = (search) => async (dispatch, getState) => {
   try {
-    dispatch({ type: types.ACTION_START });
+    // dispatch({ type: types.ACTION_START });
 
     const response = await Client({
       method: "GET",
