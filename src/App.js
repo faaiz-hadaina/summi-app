@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+
+import { routes } from "./routes";
 
 function App() {
+  const error = useSelector((state) => state?.loadingReducer?.message || "");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {error.length > 1 && (
+        <div className="error">
+          <span>{error}</span>
+        </div>
+      )}
+
+      <RouterProvider router={routes} />
+    </>
   );
 }
 
