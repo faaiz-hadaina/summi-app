@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import loader from "./assets/loader.gif";
 import { routes } from "./routes";
 

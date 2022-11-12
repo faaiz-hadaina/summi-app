@@ -2,14 +2,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addContact } from "../redux/actions/addcontact";
-import { Client } from "./../services/client";
 
 const AddContact = () => {
   const dispatch = useDispatch();
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  const [success, setSuccess] = React.useState("");
-  const [error, setError] = React.useState("");
 
   const addSuccess = useSelector(
     (state) => state?.contactReducer?.addSuccess || []
