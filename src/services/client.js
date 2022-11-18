@@ -4,7 +4,7 @@ const baseURL = "https://aqueous-cliffs-92016.herokuapp.com/";
 export const Client = async (params) => {
   const { path, method, data, contentType = "application/json" } = params;
   const headers = {
-    "Content-Type": `${contentType}`
+    "Content-Type": `${contentType}`,
   };
   let url = `${baseURL}${path}`;
   const requestBody = {
@@ -12,7 +12,7 @@ export const Client = async (params) => {
     url,
     headers,
     data: JSON.stringify(data),
-    responseType: "json"
+    responseType: "json",
   };
 
   try {

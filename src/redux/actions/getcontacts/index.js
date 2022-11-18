@@ -7,7 +7,7 @@ export const searchContact = (search) => async (dispatch, getState) => {
 
     const response = await Client({
       method: "GET",
-      path: `api/search?search=${search}`
+      path: `api/search?search=${search}`,
     });
 
     const responseData = response.data;
@@ -17,7 +17,7 @@ export const searchContact = (search) => async (dispatch, getState) => {
     dispatch({ type: types.SEARCH_CONTACTS_SUCCESS, payload: responseData });
   } catch (e) {
     console.log(e);
-    const { message } = e.response.data;
+    const { message } = e?.response?.data;
     dispatch({ type: types.ACTION_FAILED, message });
   }
 };

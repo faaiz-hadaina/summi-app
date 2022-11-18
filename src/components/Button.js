@@ -1,18 +1,18 @@
 import React from "react";
 
-const Button = ({ color, onClick }) => {
+const Button = ({ color, onClick, title }) => {
   const btnStyle = {
-    backgroundColor: color
+    backgroundColor: color,
   };
   return (
     <button onClick={onClick} style={btnStyle} className="btn">
-      Add
+      {title}
     </button>
   );
 };
 
 Button.defaultProps = {
-  color: "steelblue"
+  color: "steelblue",
 };
 
 export default Button;

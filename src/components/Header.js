@@ -9,7 +9,11 @@ const Header = () => {
     <header className="header">
       <h1>{"Phonebook App"}</h1>
       <div className="add-container">
-        <Button onClick={() => navigate("/addcontact")} color="green" />
+        <Button
+          title={"Add"}
+          onClick={() => navigate("/addcontact")}
+          color="green"
+        />
         <FileUpload />
       </div>
     </header>
